@@ -1,1 +1,32 @@
 // Заголовки, загальні БЕМ блоки та інше...
+
+// H2 - TITLE
+.section-title {
+	font-size: toRem(52);
+	font-weight: 700;
+	line-height: math.div(64, 52);
+
+	& p {
+		color: $neutral-grey-1;
+	}
+
+	&--plus {
+		& h2 {
+			margin-bottom: toRem(24);
+		}
+
+		& p {
+			font-size: toRem(18);
+			font-weight: 400;
+			line-height: math.div(28, 18);
+		}
+	}
+
+	&--plus-lg {
+		& p {
+			font-size: toRem(24);
+			font-weight: 400;
+			line-height: math.div(36, 24);
+		}
+	}
+}

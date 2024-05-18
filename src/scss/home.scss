@@ -1,7 +1,184 @@
-.page {
-	margin-top: toRem(100);
+//===== >>> MAIN - SECTION >>> ====================================
+
+.hero {
+	display: grid;
+	grid-template-columns: 22% 1fr 22%;
+
+	padding: toRem(0) toRem(16) toRem(61);
+
+	background-color: $primary-dark-blue-1;
+	// .hero__img-left
+	&__img-left {
+	}
+
+	// .hero__body
+	&__body {
+		padding-top: toRem(162);
+	}
+
+	// .hero__img-right
+	&__img-right {
+	}
+
+	&__img-left,
+	&__img-right {
+		border-radius: 22px;
+		overflow: hidden;
+
+		& img {
+			object-position: center top;
+		}
+	}
+
+	// .hero__container
+	&__container {
+	}
+
+	// .hero__content
+	&__content {
+		display: flex;
+		flex-direction: column;
+		gap: toRem(25);
+		align-items: center;
+		text-align: center;
+
+		margin-bottom: toRem(48);
+	}
+
+	// .hero__short-serv-list
+	&__short-serv-list {
+		display: flex;
+		align-items: center;
+		gap: toRem(22);
+
+		color: $neutral-grey-2;
+
+		font-size: toRem(20);
+		font-weight: 700;
+		line-height: math.div(28, 20);
+
+		& span {
+			width: toRem(5);
+			height: toRem(5);
+
+			background-color: $neutral-grey-2;
+			border-radius: 50%;
+		}
+	}
+
+	// .hero__title
+	&__title {
+		padding: toRem(0) toRem(190) toRem(0);
+
+		color: $neutral-white;
+
+		font-size: toRem(64);
+		font-weight: 800;
+		line-height: math.div(76, 64);
+	}
+
+	// .hero__short-advant-list
+	&__short-advant-list {
+		display: flex;
+		gap: toRem(45);
+
+		color: $primary-sky-blue;
+
+		font-size: toRem(20);
+		line-height: math.div(32, 20);
+
+		& li {
+			display: flex;
+			align-items: center;
+			gap: toRem(10);
+
+			&::before {
+				content: "";
+				height: toRem(24);
+				width: toRem(24);
+				background-image: url("@img/check-thin.svg");
+				//background-position: center center; /* x y */
+				//background-size: cover;
+				//background-repeat: no-repeat;
+			}
+		}
+	}
+
+	// .hero__btn
+	&__btn {
+		margin-bottom: toRem(152);
+
+		text-align: center;
+	}
+
+	// .hero__advantages
+	&__advantages {
+	}
 }
 
-//====================================================================================================
+.advant-hero {
+	padding: 0 toRem(70);
+	// .advant-hero__list
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(toRem(170), auto));
+		gap: toRem(64);
+	}
 
-//====================================================================================================
+	// .advant-hero__item
+	&__item {
+		position: relative;
+
+		display: flex;
+		align-items: center;
+		gap: toRem(16);
+
+		@media (min-width: 1900px) {
+			&:not(:last-child) {
+				&::after {
+					content: "";
+					position: absolute;
+					width: toRem(1);
+					height: 100%;
+					top: 0;
+					right: toRem(-32);
+
+					background: linear-gradient(
+						0deg,
+						rgba(20, 34, 87, 1) 0%,
+						rgba(79, 102, 183, 1) 50%,
+						rgba(20, 34, 87, 1) 100%
+					);
+				}
+			}
+		}
+	}
+
+	// .advant-hero__icon
+	&__icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		width: toRem(48);
+		height: toRem(48);
+		flex: 0 0 toRem(48);
+
+		background-color: $primary-dark-blue-2;
+		border-radius: 50%;
+
+		& img {
+			height: toRem(24);
+		}
+	}
+
+	// .advant-hero__txt
+	&__txt {
+		color: $neutral-white;
+
+		font-weight: 600;
+		line-height: math.div(24, 18);
+	}
+}
+
+//==================================== >>> MAIN - SECTION >>> =====

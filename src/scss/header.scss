@@ -1,4 +1,10 @@
 .header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 50;
+
 	background-color: $primary-dark-blue-1;
 	// .header__container
 	&__container {
@@ -121,6 +127,36 @@
 
 	// .menu__item
 	&__item {
+		position: relative;
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			height: toRem(1);
+			width: 0;
+			bottom: toRem(-3);
+
+			background-color: $neutral-white;
+			transition: all 0.3s ease-out;
+		}
+
+		&::before {
+			left: 10%;
+		}
+
+		&::after {
+			right: 10%;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				&::before,
+				&::after {
+					width: 40%;
+				}
+			}
+		}
 	}
 
 	// .menu__link

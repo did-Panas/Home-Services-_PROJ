@@ -10,7 +10,6 @@
 	border-radius: 60px;
 
 	font-weight: 700;
-	line-height: math.div(24, 18);
 
 	transition: all 0.3s;
 	position: relative;
@@ -50,12 +49,26 @@
 		align-items: center;
 
 		padding: toRem(8) toRem(8) toRem(8) toRem(24);
+
+		@media (max-width: $tablet) {
+			gap: toRem(12);
+
+			padding: toRem(8) toRem(8) toRem(8) toRem(20);
+
+			& img {
+				width: toRem(32);
+				height: toRem(32);
+			}
+		}
 	}
 
 	&--white,
 	&--call {
-		font-size: toRem(24);
 		line-height: math.div(32, 24);
+
+		@media (min-width: $tablet) {
+			font-size: toRem(24);
+		}
 	}
 
 	&--fw {

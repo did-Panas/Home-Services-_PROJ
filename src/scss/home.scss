@@ -1,37 +1,101 @@
 //===== >>> MAIN - SECTION >>> ====================================
 
 .hero {
-	display: grid;
-	grid-template-columns: 22% 1fr 22%;
+	position: relative;
 
-	padding: toRem(0) toRem(16) toRem(61);
+	display: grid;
+
+	min-height: 100vh;
+	padding: toRem(56) toRem(0) toRem(61);
+
+	@include adaptiveValue("padding-bottom", 61, 30, 0, $maxWidth, 991.98);
 
 	background-color: $primary-dark-blue-1;
-	// .hero__img-left
-	&__img-left {
+
+	@media (min-width: $tablet) {
+		grid-template-columns: auto 1fr auto;
+
+		padding: toRem(80) toRem(16) toRem(61);
+	}
+
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: toRem(-1);
+		@include adaptiveValue("width", 482, 238, 0, $maxWidth, 991.98);
+		@include adaptiveValue("height", 45, 22, 0, $maxWidth, 992.98);
+
+		background-position: center center; /* x y */
+		background-size: cover;
+		background-repeat: no-repeat;
+
+		@media (max-width: $tablet) {
+			bottom: toRem(-14);
+
+			width: toRem(485);
+			height: toRem(45);
+		}
+	}
+
+	&::before {
+		left: 0;
+		background-image: url("@img/decor-l.svg");
+
+		@media (max-width: $tablet) {
+			left: toRem(-405);
+		}
+	}
+
+	&::after {
+		right: 0;
+		background-image: url("@img/decor-r.svg");
+
+		@media (max-width: $tablet) {
+			right: toRem(-405);
+		}
 	}
 
 	// .hero__body
 	&__body {
 		padding-top: toRem(162);
+		padding-bottom: toRem(26);
+		@include adaptiveValue("padding-top", 162, 26, 0, 991, 375);
 	}
 
-	// .hero__img-right
-	&__img-right {
-	}
-
+	// .hero__img-right,
+	// .hero__img-left
 	&__img-left,
 	&__img-right {
-		border-radius: 22px;
-		overflow: hidden;
+		display: none;
 
-		& img {
-			object-position: center top;
+		@media (min-width: $tablet) {
+			display: block;
+
+			@include adaptiveValue("width", 412, 200, 0, 1920, 991);
+
+			border-radius: 22px;
+			overflow: hidden;
+
+			& img {
+				object-position: center top;
+			}
 		}
 	}
 
 	// .hero__container
 	&__container {
+		display: flex;
+		flex-direction: column;
+		gap: toRem(48);
+
+		max-width: toRem(1200);
+		height: 100%;
+
+		@media (max-width: $tablet) {
+			justify-content: space-between;
+			gap: toRem(24);
+		}
 	}
 
 	// .hero__content
@@ -42,18 +106,21 @@
 		align-items: center;
 		text-align: center;
 
-		margin-bottom: toRem(48);
+		@media (max-width: $mobileSmall) {
+			gap: toRem(14);
+		}
 	}
 
 	// .hero__short-serv-list
 	&__short-serv-list {
 		display: flex;
 		align-items: center;
-		gap: toRem(22);
+		@include adaptiveValue("gap", 22, 14, 0, 991, 375);
 
 		color: $neutral-grey-2;
 
 		font-size: toRem(20);
+		@include adaptiveValue("font-size", 20, 12, 0, 992, 320);
 		font-weight: 700;
 		line-height: math.div(28, 20);
 
@@ -64,65 +131,96 @@
 			background-color: $neutral-grey-2;
 			border-radius: 50%;
 		}
+
+		@media (max-width: $tablet) {
+			font-weight: 600;
+		}
 	}
 
 	// .hero__title
 	&__title {
 		padding: toRem(0) toRem(190) toRem(0);
+		@include adaptiveValue("padding-right", 190, 0, 0, 1920, 1200);
+		@include adaptiveValue("padding-left", 190, 0, 0, 1920, 1200);
 
 		color: $neutral-white;
 
-		font-size: toRem(64);
+		@include adaptiveValue("font-size", 64, 32, 0, 1920, 400);
 		font-weight: 800;
 		line-height: math.div(76, 64);
+
+		@media (max-width: $tablet) {
+			margin-bottom: toRem(10);
+
+			font-weight: 700;
+		}
 	}
 
 	// .hero__short-advant-list
 	&__short-advant-list {
 		display: flex;
-		gap: toRem(45);
+		@include adaptiveValue("column-gap", 45, 27, 0, 991, 375);
+		row-gap: toRem(12);
+		flex-wrap: wrap;
+		justify-content: center;
 
 		color: $primary-sky-blue;
 
-		font-size: toRem(20);
+		@include adaptiveValue("font-size", 20, 14, 0, 991, 375);
 		line-height: math.div(32, 20);
 
 		& li {
 			display: flex;
 			align-items: center;
-			gap: toRem(10);
+			@include adaptiveValue("gap", 10, 7, 0, 991, 375);
 
 			&::before {
 				content: "";
-				height: toRem(24);
-				width: toRem(24);
+				@include adaptiveValue("height", 24, 18, 0, 991, 375);
+				@include adaptiveValue("width", 24, 18, 0, 991, 375);
 				background-image: url("@img/check-thin.svg");
-				//background-position: center center; /* x y */
-				//background-size: cover;
-				//background-repeat: no-repeat;
+				background-position: center center; /* x y */
+				background-size: cover;
+				background-repeat: no-repeat;
 			}
 		}
 	}
 
 	// .hero__btn
 	&__btn {
-		margin-bottom: toRem(152);
-
 		text-align: center;
+
+		@media (min-width: $tablet) {
+			flex: 1 1 auto;
+
+			margin-bottom: toRem(25);
+		}
+
+		@media (max-width: $tablet) {
+			margin-bottom: toRem(25);
+		}
 	}
 
 	// .hero__advantages
 	&__advantages {
 	}
+
+	// .hero__decor
+	&__decor {
+	}
 }
 
 .advant-hero {
-	padding: 0 toRem(70);
+	//padding: 0 toRem(50);
 	// .advant-hero__list
 	&__list {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(toRem(170), auto));
+		grid-template-columns: repeat(auto-fit, minmax(toRem(180), auto));
 		gap: toRem(64);
+
+		@media (max-width: $tablet) {
+			gap: toRem(20);
+		}
 	}
 
 	// .advant-hero__item
@@ -152,23 +250,30 @@
 				}
 			}
 		}
+
+		@media (max-width: $tablet) {
+			flex-direction: column;
+		}
 	}
 
 	// .advant-hero__icon
 	&__icon {
+		flex-grow: 0;
+		flex-shrink: 0;
+		@include adaptiveValue("flex-basis", 48, 32, 0, 991, 375);
+
 		display: flex;
 		align-items: center;
 		justify-content: center;
 
-		width: toRem(48);
-		height: toRem(48);
-		flex: 0 0 toRem(48);
+		@include adaptiveValue("width", 48, 32, 0, 991, 375);
+		@include adaptiveValue("height", 48, 32, 0, 991, 375);
 
 		background-color: $primary-dark-blue-2;
 		border-radius: 50%;
 
 		& img {
-			height: toRem(24);
+			@include adaptiveValue("height", 24, 14, 0, 991, 375);
 		}
 	}
 
@@ -176,9 +281,22 @@
 	&__txt {
 		color: $neutral-white;
 
+		@include adaptiveValue("font-size", 18, 14, 0, 991, 375);
 		font-weight: 600;
 		line-height: math.div(24, 18);
+
+		@media (max-width: $tablet) {
+			text-align: center;
+		}
 	}
 }
 
 //==================================== >>> MAIN - SECTION >>> =====
+
+//===== >>> DESCRIPTION - SECTION >>> ==============================
+
+.footer {
+	height: 500px;
+}
+
+//============================== >>> SHORT-INFO - SECTION >>> =====

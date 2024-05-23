@@ -167,5 +167,10 @@ body {
 .page {
 	// .page__hero
 	&__hero {
+		@include adaptiveValue("margin-bottom", 123, 60, 0, 991, 375);
+	}
+	// .page__description
+	&__description {
+		@include adaptiveValue("margin-bottom", 190, 64, 0, 991, 375);
 	}
 }

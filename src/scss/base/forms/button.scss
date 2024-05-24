@@ -38,10 +38,12 @@
 	}
 
 	&--white {
-		padding: toRem(16) toRem(80);
+		padding: toRem(16) toRem(20);
 
 		background-color: $neutral-white;
 		color: $primary-sky-blue;
+
+		justify-content: center;
 	}
 
 	&--call {

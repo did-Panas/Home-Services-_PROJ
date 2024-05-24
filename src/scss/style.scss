@@ -173,4 +173,8 @@ body {
 	&__description {
 		@include adaptiveValue("margin-bottom", 190, 64, 0, 991, 375);
 	}
+	// .page__services
+	&__services {
+		@include adaptiveValue("margin-bottom", 138, 52, 0, 991, 375);
+	}
 }

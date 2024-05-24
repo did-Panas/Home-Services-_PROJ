@@ -293,6 +293,8 @@
 
 //==================================== >>> MAIN - SECTION >>> =====
 
+//===== >>> DESCRIPTION - SECTION >>> ==============================
+
 .description {
 	// .description__container
 	&__container {
@@ -430,11 +432,123 @@
 	}
 }
 
-//===== >>> DESCRIPTION - SECTION >>> ==============================
+//============================== >>> DESCRIPTION - SECTION >>> =====
 
+//===== >>> SERVICES - SECTION >>> =================================
+
+.services {
+	// .services__container
+	&__container {
+		display: flex;
+		flex-direction: column;
+		@include adaptiveValue("gap", 92, 32, 0, 991, 375);
+	}
+
+	// .services__title
+	&__title {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+
+		& p {
+			max-width: toRem(552);
+		}
+	}
+
+	// .services__list
+	&__list {
+		display: grid;
+
+		@media (min-width: $mobileSmall) {
+			grid-template-columns: repeat(auto-fit, minmax(toRem(360), auto));
+		}
+	}
+
+	// .services__item
+	&__item {
+		display: flex;
+		flex-direction: column;
+		gap: toRem(12);
+		text-align: left;
+
+		padding: toRem(32);
+
+		@media (max-width: $tablet) {
+			text-align: center;
+			align-items: center;
+		}
+
+		// .services__item_btn-block
+		&_btn-block {
+			display: flex;
+			flex-direction: column;
+			gap: toRem(4);
+			align-items: center;
+			text-align: center;
+
+			background-color: $primary-sky-blue;
+			border-radius: 24px;
+
+			& h4,
+			& p {
+				color: $neutral-white;
+			}
+
+			& h4 {
+				font-size: toRem(24);
+				font-weight: 700;
+				line-height: math.div(32, 24);
+			}
+
+			& p {
+				&:not(:last-child) {
+					margin-bottom: toRem(28);
+				}
+
+				line-height: math.div(28, 18);
+			}
+		}
+	}
+
+	// .services__img
+	&__img {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		height: toRem(64);
+		width: toRem(64);
+		margin-bottom: toRem(4);
+
+		background-color: $primary-dark-blue-1;
+		border-radius: 20px;
+
+		& img {
+			width: toRem(40);
+			height: toRem(40);
+		}
+	}
+
+	// .services__item-title
+	&__item-title {
+		font-size: toRem(24);
+		font-weight: 700;
+		line-height: math.div(32, 24);
+	}
+
+	// .services__txt
+	&__txt {
+		color: $neutral-grey-1;
+
+		line-height: math.div(28, 18);
+	}
+}
+
+//================================= >>> SERVICES - SECTION >>> =====
 .footer {
 	height: 500px;
 	background-color: green;
 }
 
-//============================== >>> SHORT-INFO - SECTION >>> =====
+//============================== >>> !!!! - SECTION >>> =====

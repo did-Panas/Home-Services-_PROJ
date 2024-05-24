@@ -398,6 +398,7 @@
 
 		& a {
 			text-decoration: underline;
+			white-space: nowrap;
 
 			@include adaptiveValue("font-size", 20, 18, 0, 1920, 991);
 			font-weight: 600;
@@ -479,6 +480,10 @@
 			align-items: center;
 		}
 
+		@media (max-width: 400px) {
+			padding: toRem(32) 0;
+		}
+
 		// .services__item_btn-block
 		&_btn-block {
 			display: flex;
@@ -489,6 +494,10 @@
 
 			background-color: $primary-sky-blue;
 			border-radius: 24px;
+
+			@media (max-width: 400px) {
+				padding: toRem(32);
+			}
 
 			& h4,
 			& p {
@@ -546,6 +555,154 @@
 }
 
 //================================= >>> SERVICES - SECTION >>> =====
+
+//===== >>> GUARANTEE - SECTION >>> =================================
+
+.guarantee {
+	// .guarantee__body
+	&__body {
+		position: relative;
+
+		margin: 0 toRem(60);
+		@include adaptiveValue("padding-top", 64, 32, 0, 991, 375);
+		@include adaptiveValue("padding-bottom", 64, 32, 0, 991, 375);
+
+		background-color: $primary-dark-blue-1;
+		color: $neutral-grey-2;
+		border-radius: 24px;
+
+		& h2,
+		& h4 {
+			color: $neutral-white;
+		}
+
+		& p {
+			line-height: math.div(28, 18);
+		}
+
+		@media (min-width: 1700px) {
+			&::before,
+			&::after {
+				content: "";
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				height: toRem(645);
+				width: toRem(45);
+				background-position: center center; /* x y */
+				background-size: cover;
+				background-repeat: no-repeat;
+			}
+
+			&::before {
+				background-image: url("@img/guarantee/decor-quar-left.svg");
+				left: toRem(-12);
+			}
+
+			&::after {
+				background-image: url("@img/guarantee/decor-quar-right.svg");
+				right: toRem(-12);
+			}
+		}
+
+		@media (max-width: $tablet) {
+			margin: 0 toRem(24);
+		}
+	}
+
+	// .guarantee__container
+	&__container {
+	}
+
+	// .guarantee__title
+	&__title {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		@include adaptiveValue("grid-column-gap", 200, 50, 0, 1920, 992);
+		align-items: end;
+		justify-content: space-between;
+
+		@include adaptiveValue("margin-bottom", 120, 58, 0, 991, 375);
+
+		@media (max-width: $tablet) {
+			grid-template-columns: 1fr;
+			@include adaptiveValue("grid-row-gap", 40, 12, 0, 991, 375);
+			justify-items: center;
+			text-align: center;
+
+			& p {
+				max-width: toRem(700);
+			}
+		}
+
+		& h2 {
+			@include adaptiveValue("font-size", 52, 24, 0, 991, 375);
+			font-weight: 700;
+			line-height: math.div(64, 52);
+		}
+	}
+
+	// .guarantee__list
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(auto, 628px));
+		grid-row-gap: toRem(60);
+		grid-column-gap: toRem(50);
+		justify-content: space-between;
+
+		@media (max-width: $tablet) {
+			grid-template-columns: minmax(auto, 628px);
+			justify-content: center;
+		}
+	}
+
+	// .guarantee__item
+	&__item {
+		display: grid;
+		grid-template: auto 1fr / auto 1fr;
+		grid-column-gap: toRem(38);
+		grid-row-gap: toRem(12);
+
+		@media (max-width: $mobileSmall) {
+			grid-template: 1fr auto auto / 1fr;
+			justify-items: center;
+			text-align: center;
+		}
+	}
+
+	// .guarantee__icon
+	&__icon {
+		@media (min-width: $mobileSmall) {
+			grid-row: 1 / -1;
+		}
+
+		@media (max-width: $mobileSmall) {
+			margin-bottom: toRem(7);
+		}
+
+		& img {
+			@include adaptiveValue("width", 89, 62, 0, 991, 375);
+			@include adaptiveValue("height", 89, 62, 0, 991, 375);
+		}
+	}
+
+	// .guarantee__item-title
+	&__item-title {
+		font-size: toRem(24);
+		font-weight: 700;
+		line-height: math.div(32, 24);
+	}
+
+	// .guarantee__item-txt
+	&__item-txt {
+		@media (min-width: $mobileSmall) {
+			grid-column: 2 / -1;
+		}
+	}
+}
+
+//================================= >>> GUARANTEE - SECTION >>> =====
+
 .footer {
 	height: 500px;
 	background-color: green;

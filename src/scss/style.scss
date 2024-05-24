@@ -47,7 +47,7 @@ $maxWidth: 1920;
 $maxWidthContainer: 1440;
 // Загальний відступ у контейнера
 // (30 = по 15px ліворуч і праворуч, 0 = немає відступу)
-$containerPadding: 30;
+$containerPadding: 48;
 
 // Ширина спрацьовування першого брейкпоінту
 $containerWidth: $maxWidthContainer + $containerPadding;
@@ -176,5 +176,9 @@ body {
 	// .page__services
 	&__services {
 		@include adaptiveValue("margin-bottom", 138, 52, 0, 991, 375);
+	}
+	// .page__guarantee
+	&__guarantee {
+		@include adaptiveValue("margin-bottom", 183, 60, 0, 991, 375);
 	}
 }

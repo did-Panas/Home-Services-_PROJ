@@ -297,32 +297,53 @@
 	// .description__container
 	&__container {
 		display: grid;
-		grid-template-columns: auto 1fr;
-		gap: toRem(50);
+		gap: toRem(90);
+
+		@media (min-width: $tablet) {
+			grid-template-columns: auto 1fr;
+		}
 	}
 
 	// .description__content
 	&__content {
 		display: flex;
 		flex-direction: column;
+		gap: toRem(56);
 		@include adaptiveValue("gap", 56, 32, 0, 991, 375);
-
-		max-width: toRem(561);
 
 		padding-top: toRem(100);
 		@include adaptiveValue("padding-top", 100, 0, 0, 1920, 991);
+
+		@media (min-width: $tablet) {
+			max-width: toRem(561);
+		}
 	}
 
 	// .description__title
 	&__title {
+		text-align: center;
 	}
 
 	// .description__list
 	&__list {
 		display: grid;
-		grid-template: repeat(3, 1fr) / repeat(2, 1fr);
 		grid-row-gap: toRem(32);
 		grid-column-gap: toRem(50);
+
+		@include adaptiveValue("margin-bottom", 50, 1, 3, 991, 375);
+
+		@media (max-width: $tablet) {
+			grid-row-gap: toRem(24);
+			grid-column-gap: toRem(30);
+		}
+
+		@media (min-width: 550px) {
+			grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+		}
+
+		@media (max-width: 549px) {
+			justify-content: center;
+		}
 	}
 
 	// .description__item
@@ -334,6 +355,7 @@
 		color: $primary-dark-blue-2;
 
 		font-size: toRem(20);
+		@include adaptiveValue("font-size", 20, 16, 0, 991, 375);
 		font-weight: 700;
 		line-height: math.div(28, 20);
 
@@ -346,6 +368,17 @@
 			background-size: cover;
 			background-repeat: no-repeat;
 		}
+
+		@media (max-width: $tablet) {
+			gap: toRem(10);
+
+			font-weight: 600;
+		}
+	}
+
+	// .description__contacting
+	&__contacting {
+		align-self: center;
 	}
 
 	// .description__contacting
@@ -364,7 +397,7 @@
 		& a {
 			text-decoration: underline;
 
-			font-size: toRem(20);
+			@include adaptiveValue("font-size", 20, 18, 0, 1920, 991);
 			font-weight: 600;
 
 			transition: color 0.3s ease-out;
@@ -379,14 +412,21 @@
 
 	// .description__decor
 	&__decor {
+		@media (max-width: $tablet) {
+			grid-row: 1 / 2;
+		}
 	}
 
 	// .description__img
 	&__img {
 		max-width: toRem(712);
 		padding-top: 85%;
-
 		margin: 0 0 0 auto;
+
+		@media (max-width: $tablet) {
+			padding-top: 73%;
+			margin: 0 auto;
+		}
 	}
 }
 

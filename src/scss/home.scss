@@ -703,6 +703,115 @@
 
 //================================= >>> GUARANTEE - SECTION >>> =====
 
+//===== >>> HOW-WORKS - SECTION >>> =================================
+
+.how-works {
+	// .how-works__container
+	&__container {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		gap: toRem(13);
+
+		@media (max-width: 1600px) {
+			gap: toRem(70);
+		}
+
+		@media (max-width: $mobile) {
+			grid-template: 1fr auto / 1fr;
+		}
+	}
+
+	// .how-works__img
+	&__img {
+		@include adaptiveValue("width", 714, 300, 2, 1920, 768);
+		padding-top: 85%;
+
+		@media (min-width: 1600px) {
+			position: relative;
+			left: toRem(-74);
+		}
+
+		@media (max-width: $mobile) {
+			width: 70%;
+			padding-top: 59%;
+			margin: 0 auto;
+		}
+
+		@media (max-width: 500px) {
+			width: 100%;
+			padding-top: 85%;
+		}
+	}
+
+	// .how-works__content
+	&__content {
+	}
+
+	// .how-works__title
+	&__title {
+		margin-bottom: toRem(60);
+
+		@media (max-width: $tablet) {
+			margin-bottom: toRem(24);
+		}
+	}
+
+	// .how-works__list
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: toRem(52);
+
+		@media (max-width: $tablet) {
+			gap: toRem(24);
+		}
+	}
+
+	// .how-works__item
+	&__item {
+		display: grid;
+		grid-template-columns: 1fr toRem(164) auto;
+		gap: toRem(24);
+		align-items: center;
+
+		@media (max-width: $tablet) {
+			grid-template: 1fr auto / auto 1fr;
+			gap: toRem(12) toRem(24);
+		}
+	}
+
+	// .how-works__item-num
+	&__item-num {
+		color: $neutral-grey-2;
+
+		font-size: toRem(52);
+		font-weight: 700;
+		line-height: math.div(64, 52);
+	}
+
+	// .how-works__item-title
+	&__item-title {
+		margin-right: toRem(12);
+
+		font-size: toRem(24);
+		font-weight: 700;
+		line-height: math.div(32, 24);
+	}
+
+	// .how-works__item-txt
+	&__item-txt {
+		color: $neutral-grey-1;
+
+		line-height: math.div(28, 18);
+
+		@media (max-width: $tablet) {
+			grid-column: 1 / -1;
+		}
+	}
+}
+
+//================================= >>> HOW-WORKS - SECTION >>> =====
+
 .footer {
 	height: 500px;
 	background-color: green;

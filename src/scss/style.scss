@@ -181,4 +181,8 @@ body {
 	&__guarantee {
 		@include adaptiveValue("margin-bottom", 183, 60, 0, 991, 375);
 	}
+	// .page__how-works
+	&__how-works {
+		@include adaptiveValue("margin-bottom", 287, 64, 0, 991, 375);
+	}
 }

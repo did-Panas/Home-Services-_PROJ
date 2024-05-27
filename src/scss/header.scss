@@ -161,6 +161,11 @@
 
 	// .menu__link
 	&__link {
+		transition: color 0.3s;
+
+		&._navigator-active {
+			color: $neutral-grey-2;
+		}
 	}
 }
 

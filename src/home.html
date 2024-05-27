@@ -36,7 +36,7 @@
 						</div>
 
 						<div class="hero__btn">
-							<a href="#!" class="button button--call">
+							<a href="#!" type="button" class="button button--call">
 								<p>Call Us Now</p>
 								<span><img src="@img/call.svg" alt=""></span>
 							</a>
@@ -82,7 +82,7 @@
 
 			</section>
 
-			<section class="page__description description">
+			<section data-watch="navigator" data-watch-threshold="1" class="page__description description">
 				<div class="description__container">
 
 					<div class="description__content">
@@ -119,7 +119,7 @@
 				</div>
 			</section>
 
-			<section class="page__services services">
+			<section data-watch="navigator" data-watch-threshold="0.7" class="page__services services">
 				<div class="services__container">
 
 					<div class="services__title section-title section-title--plus">
@@ -196,14 +196,14 @@
 						<li class="services__item services__item_btn-block">
 							<h4>More service?</h4>
 							<p>You can tell us what you need and we can help! </p>
-							<button class="button button--white button--fw">Call Us Now</button>
+							<button type="button" class="button button--white button--fw">Call Us Now</button>
 						</li>
 					</ul>
 
 				</div>
 			</section>
 
-			<section class="page__guarantee guarantee">
+			<section data-watch class="page__guarantee guarantee">
 				<div class="guarantee__body">
 					<div class="guarantee__container">
 
@@ -275,7 +275,7 @@
 				</div>
 			</section>
 
-			<section class="page__how-works how-works">
+			<section data-watch class="page__how-works how-works">
 				<div class="how-works__container">
 
 					<div class="how-works__img how-works__img-ibg--contain">
@@ -314,11 +314,59 @@
 				</div>
 			</section>
 
-			<section class="page__reviews reviews">
+			<section data-watch class="page__reviews reviews">
 				<div class="reviews__container">
 
-					<div class="reviews__title">
+					<div class="reviews__title section-title">
+						<h2>
+							Here our original reviews from trusted platform
+						</h2>
+					</div>
 
+					<div class="reviews__body">
+						<div class="reviews__slider swiper">
+							<div class="reviews__wrapper swiper-wrapper">
+								<div class="reviews__slide slide-reviews swiper-slide">
+
+									<div class="slide-reviews__logo">
+										<img src="@img/reviews-logo.png" alt="Logo">
+									</div>
+
+									<div class="slide-reviews__text text">
+										<p>
+											Roof repairs can be a real headache, but HomePro makes it easy! Their roofing team turned my leaky roof into a stockade. With their craftsmanship and the best
+											materials,
+											my house is now ready to weather any storm.
+										</p>
+									</div>
+
+									<div class="slide-reviews__user">
+										<div class="slide-reviews__avatar">
+											<img src="@img/avatar.jpeg" alt="Image">
+										</div>
+										<div class="slide-reviews__body">
+											<div class="slide-reviews__name">Kende Attila</div>
+											<div class="rating rating_set">
+												<div class="rating__body">
+													<div class="rating__active"></div>
+													<div class="rating__items">
+														<input type="radio" class="rating__item" value="1" name="rating">
+														<input type="radio" class="rating__item" value="2" name="rating">
+														<input type="radio" class="rating__item" value="3" name="rating">
+														<input type="radio" class="rating__item" value="4" name="rating">
+														<input type="radio" class="rating__item" value="5" name="rating">
+													</div>
+												</div>
+												<div class="rating__value">3.6</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<button type="button" class="reviews__arrow reviews__arrow--left"></button>
+						<button type="button" class="reviews__arrow reviews__arrow--right"></button>
 					</div>
 
 				</div>

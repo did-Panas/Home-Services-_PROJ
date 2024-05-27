@@ -668,6 +668,24 @@
 			justify-items: center;
 			text-align: center;
 		}
+
+		opacity: 0;
+		transform: translate(0px, -15%);
+		transition:
+			opacity 0.5s,
+			transform 0.5s;
+
+		._watcher-view & {
+			opacity: 1;
+			transform: translate(0, 0);
+			@for $i from 1 through 8 {
+				&:nth-child(#{$i}) {
+					$startDelay: 0.5;
+					$delay: $i * 0.15 + $startDelay;
+					transition-delay: #{$delay}s;
+				}
+			}
+		}
 	}
 
 	// .guarantee__icon
@@ -778,6 +796,24 @@
 			grid-template: 1fr auto / auto 1fr;
 			gap: toRem(12) toRem(24);
 		}
+
+		opacity: 0;
+		transform: translate(0px, -15%);
+		transition:
+			opacity 0.5s,
+			transform 0.5s;
+
+		._watcher-view & {
+			opacity: 1;
+			transform: translate(0, 0);
+			@for $i from 1 through 8 {
+				&:nth-child(#{$i}) {
+					$startDelay: 0.5;
+					$delay: $i * 0.15 + $startDelay;
+					transition-delay: #{$delay}s;
+				}
+			}
+		}
 	}
 
 	// .how-works__item-num
@@ -811,6 +847,113 @@
 }
 
 //================================= >>> HOW-WORKS - SECTION >>> =====
+
+//===== >>> REVIEWS - SECTION >>> ===================================
+
+.reviews {
+	// .reviews__container
+	&__container {
+		max-width: toRem(1178);
+	}
+
+	// .reviews__body
+	&__body {
+		position: relative;
+
+		padding: 0 toRem(72);
+	}
+
+	// .reviews__title
+	&__title {
+	}
+
+	// .reviews__slider
+	&__slider {
+	}
+
+	// .reviews__wrapper
+	&__wrapper {
+	}
+
+	// .reviews__slide
+	&__slide {
+	}
+
+	// .reviews__arrow
+	&__arrow {
+		position: absolute;
+		top: 50%;
+		transform: translate(0px, -50%);
+		width: toRem(48);
+		height: toRem(48);
+		border-radius: 50%;
+		background: $neutral-soft-grey url("@img/prev-arrow.svg") center no-repeat;
+	}
+
+	// .reviews__arrow--left
+	&__arrow--left {
+		left: 0;
+	}
+
+	// .reviews__arrow--right
+	&__arrow--right {
+		right: 0;
+	}
+}
+
+.slide-reviews {
+	// .slide-reviews__logo
+	&__logo {
+	}
+
+	// .slide-reviews__text
+	&__text {
+	}
+
+	// .slide-reviews__user
+	&__user {
+	}
+
+	// .slide-reviews__avatar
+	&__avatar {
+	}
+
+	// .slide-reviews__body
+	&__body {
+	}
+
+	// .slide-reviews__name
+	&__name {
+	}
+}
+
+.rating {
+	// .rating_set
+	&_set {
+	}
+
+	// .rating__body
+	&__body {
+	}
+
+	// .rating__active
+	&__active {
+	}
+
+	// .rating__items
+	&__items {
+	}
+
+	// .rating__item
+	&__item {
+	}
+
+	// .rating__value
+	&__value {
+	}
+}
+
+//=================================== >>> REVIEWS - SECTION >>> =====
 
 .footer {
 	height: 500px;

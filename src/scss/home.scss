@@ -851,6 +851,9 @@
 //===== >>> REVIEWS - SECTION >>> ===================================
 
 .reviews {
+	@include adaptiveValue("padding-top", 130, 20);
+	@include adaptiveValue("padding-bottom", 130, 0);
+
 	// .reviews__container
 	&__container {
 		max-width: toRem(1178);
@@ -860,15 +863,27 @@
 	&__body {
 		position: relative;
 
-		padding: 0 toRem(72);
+		@media (min-width: em(600)) {
+			padding: 0 toRem(72);
+		}
 	}
 
 	// .reviews__title
 	&__title {
+		max-width: toRem(650);
+		margin: 0 auto;
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 90, 30);
+		}
+
+		text-align: center;
 	}
 
 	// .reviews__slider
 	&__slider {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 106, 30);
+		}
 	}
 
 	// .reviews__wrapper
@@ -887,7 +902,17 @@
 		width: toRem(48);
 		height: toRem(48);
 		border-radius: 50%;
-		background: $neutral-soft-grey url("@img/prev-arrow.svg") center no-repeat;
+		background: $primary-sky-blue url("@img/prev-arrow.svg") center no-repeat;
+
+		&.swiper-button-disabled {
+			background: $neutral-soft-grey url("@img/prev-arrow.svg") center no-repeat;
+			pointer-events: none;
+			cursor: default;
+		}
+
+		@media (max-width: em(600)) {
+			display: none;
+		}
 	}
 
 	// .reviews__arrow--left
@@ -898,24 +923,91 @@
 	// .reviews__arrow--right
 	&__arrow--right {
 		right: 0;
+
+		transform: translate(0px, -50%) rotate(-180deg);
+	}
+
+	// .reviews__bullets
+	&__bullets {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		column-gap: toRem(12);
+		column-gap: toRem(3);
+
+		.swiper-pagination-bullet {
+			flex: 0 0 toRem(12);
+			height: toRem(12);
+
+			background-color: $neutral-soft-grey;
+			border-radius: 50%;
+			cursor: pointer;
+
+			transition: all 0.3s;
+		}
+
+		.swiper-pagination-bullet-active {
+			flex: 0 0 toRem(40);
+
+			background-color: $primary-sky-blue;
+			border-radius: 24px;
+		}
 	}
 }
 
 .slide-reviews {
+	text-align: center;
 	// .slide-reviews__logo
 	&__logo {
+		position: relative;
+
+		padding-bottom: toRem(25);
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 40, 25);
+		}
+
+		text-align: center;
+
+		&::before {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 1px;
+			background: linear-gradient(to right, rgba(203, 207, 219, 0) 0%, #cbcfdb 51%, rgba(203, 207, 219, 0) 100%);
+		}
 	}
 
 	// .slide-reviews__text
 	&__text {
+		display: inline-block;
+
+		max-width: toRem(730);
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 40, 20);
+		}
 	}
 
 	// .slide-reviews__user
 	&__user {
+		display: inline-flex;
+		gap: toRem(32);
+
+		text-align: left;
 	}
 
 	// .slide-reviews__avatar
 	&__avatar {
+		flex: 0 0 toRem(76);
+		width: toRem(76);
+
+		border-radius: 50%;
+
+		& img {
+			max-width: 100%;
+		}
 	}
 
 	// .slide-reviews__body
@@ -924,36 +1016,80 @@
 
 	// .slide-reviews__name
 	&__name {
-	}
-}
+		&:not(:last-child) {
+			margin-bottom: toRem(8);
+		}
 
-.rating {
-	// .rating_set
-	&_set {
-	}
-
-	// .rating__body
-	&__body {
+		@include adaptiveValue("font-size", 24, 18);
+		font-weight: 700;
+		line-height: 133.333333%; /* 32/24 */
 	}
 
-	// .rating__active
-	&__active {
-	}
-
-	// .rating__items
-	&__items {
-	}
-
-	// .rating__item
-	&__item {
-	}
-
-	// .rating__value
-	&__value {
+	// .slide-reviews__rating
+	&__rating {
+		& .rating__value {
+			display: none;
+		}
 	}
 }
 
 //=================================== >>> REVIEWS - SECTION >>> =====
+
+//===== >>> BLOG - SECTION >>> =====================================
+
+.blog {
+	// .blog__container
+	&__container {
+	}
+
+	// .blog__title
+	&__title {
+	}
+
+	// .blog__items
+	&__items {
+	}
+
+	// .blog__item
+	&__item {
+	}
+
+	// .blog__view-more
+	&__view-more {
+	}
+}
+
+.item-blog {
+	// .item-blog__image
+	&__image {
+	}
+
+	// .item-blog__date
+	&__date {
+	}
+
+	// .item-blog__title
+	&__title {
+	}
+
+	// .item-blog__link-title
+	&__link-title {
+	}
+
+	// .item-blog__text
+	&__text {
+	}
+
+	// .item-blog__tags
+	&__tags {
+	}
+
+	// .item-blog__tag
+	&__tag {
+	}
+}
+
+//===================================== >>> BLOG - SECTION >>> =====
 
 .footer {
 	height: 500px;

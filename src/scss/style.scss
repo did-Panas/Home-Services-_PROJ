@@ -187,9 +187,12 @@ body {
 	}
 	// .page__how-works
 	&__how-works {
-		@include adaptiveValue("margin-bottom", 287, 64, 0, 991, 375);
+		@include adaptiveValue("margin-bottom", 158, 32, 0, 991, 375);
 	}
 	// .page__reviews
 	&__reviews {
+	}
+	// .page__blog
+	&__blog {
 	}
 }

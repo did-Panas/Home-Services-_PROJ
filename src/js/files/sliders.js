@@ -8,7 +8,7 @@
 // При необхідності підключаємо додаткові модулі слайдера, вказуючи їх у {} через кому
 // Приклад: { Navigation, Autoplay }
 import Swiper from 'swiper';
-import { Navigation } from 'swiper/modules';
+import { Navigation, Pagination } from 'swiper/modules';
 /*
 Основні модулі слайдера:
 Navigation, Pagination, Autoplay, 
@@ -33,12 +33,12 @@ function initSliders() {
 		new Swiper('.reviews__slider', { // Вказуємо склас потрібного слайдера
 			// Підключаємо модулі слайдера
 			// для конкретного випадку
-			modules: [Navigation],
+			modules: [Navigation, Pagination],
 			observer: true,
 			observeParents: true,
 			slidesPerView: 1,
 			spaceBetween: 0,
-			//autoHeight: true,
+			autoHeight: true,
 			speed: 800,
 
 			//touchRatio: 0,
@@ -57,12 +57,12 @@ function initSliders() {
 			*/
 
 			// Пагінація
-			/*
+
 			pagination: {
-				el: '.swiper-pagination',
+				el: '.reviews__bullets',
 				clickable: true,
 			},
-			*/
+
 
 			// Скроллбар
 			/*
@@ -74,8 +74,8 @@ function initSliders() {
 
 			// Кнопки "вліво/вправо"
 			navigation: {
-				prevEl: '.swiper-button-prev',
-				nextEl: '.swiper-button-next',
+				prevEl: '.reviews__arrow--left',
+				nextEl: '.reviews__arrow--right',
 			},
 			/*
 			// Брейкпоінти

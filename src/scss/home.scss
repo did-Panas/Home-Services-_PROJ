@@ -1064,10 +1064,10 @@
 		&:not(:last-child) {
 			@include adaptiveValue("margin-bottom", 56, 20);
 		}
-	}
 
-	@media (max-width: $mobileSmall) {
-		grid-template-columns: repeat(auto-fill, minmax(toRem(280), 1fr));
+		@media (max-width: $mobileSmall) {
+			grid-template-columns: repeat(auto-fill, minmax(toRem(280), 1fr));
+		}
 	}
 
 	// .blog__item
@@ -1086,6 +1086,12 @@
 		@include adaptiveValue("font-size", 24, 18);
 		font-weight: 700;
 		line-height: 133.333333%; /* 32/24 */
+
+		@media (any-hover: hover) {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
 	}
 }
 

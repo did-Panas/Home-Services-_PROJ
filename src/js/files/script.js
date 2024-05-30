@@ -7,6 +7,9 @@ import { flsModules } from "./modules.js";
 // ===== Прив'язка блоку BLOG до бази даних (файл JSON) ==============
 
 const blogItems = document.querySelector('.blog__items');
+let data;
+let startItem = 0;
+let endItem = 3;
 
 // checking if blog-section is exist
 if (blogItems) {
@@ -20,18 +23,22 @@ async function loadBlogIItems() {
 	});
 	if (response.ok) {
 		const responseResult = await response.json();
-		initBlog(responseResult);
+		data = responseResult;
+		initBlog(data, startItem, endItem);
 	} else {
 		alert("Error!");
 	}
 }
 
-// selecting 3 items (cards/blogs)
-function initBlog(data) {
-	for (let index = 0; index < 3; index++) {
-		const item = data.items[index];
+// selecting 3 items (cards/blog-items)
+function initBlog(data, startItem, endItem) {
+	const dataPart = data.items.slice(startItem, endItem);
+
+	dataPart.forEach(item => {
 		buildBlogItem(item);
-	}
+	});
+
+	viewMore();
 }
 
 // template building
@@ -39,7 +46,7 @@ function buildBlogItem(item) {
 
 	let blogItemTemplate = ``;
 
-	blogItemTemplate += `<article class="blog__item item-blog">`;
+	blogItemTemplate += `<article data-id="${item.id}" class="blog__item item-blog">`;
 
 	item.image1x ? blogItemTemplate +=
 		`<a href="${item.url}" class="item-blog__image item-blog__image-ibg">
@@ -75,4 +82,29 @@ function buildBlogItem(item) {
 
 	blogItems.insertAdjacentHTML('beforeend', blogItemTemplate);
 
+}
+
+// view-more btn functional
+document.addEventListener("click", documentActions);
+
+function viewMore() {
+	const dataItemsLength = data.items.length;
+	const currentItems = document.querySelectorAll('.item-blog').length;
+	const viewMoreBtn = document.querySelector('.blog__view-more');
+
+	currentItems < dataItemsLength ? viewMoreBtn.hidden = false : viewMoreBtn.hidden = true;
+	console.log(currentItems);
+}
+
+function documentActions(e) {
+	const targetElement = e.target;
+
+	if (targetElement.closest('.blog__view-more')) {
+		startItem = document.querySelectorAll('.item-blog').length;
+		endItem = startItem + 3;
+
+		initBlog(data, startItem, endItem);
+		e.preventDefault();
+
+	}
 }

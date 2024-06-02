@@ -1196,6 +1196,154 @@
 
 //===================================== >>> BLOG - SECTION >>> =====
 
+//===== >>> BLOG - SECTION >>> =====================================
+
+.faq {
+	// .faq__container
+	&__container {
+		display: flex;
+		@include adaptiveValue("gap", 50, 32, 0, 991, 375);
+		align-items: center;
+
+		@media (min-width: $tablet) {
+			justify-content: space-between;
+		}
+
+		@media (max-width: $tablet) {
+			flex-direction: column;
+		}
+	}
+
+	// .faq__title
+	&__title {
+		max-width: toRem(470);
+
+		@media (max-width: $tablet) {
+			text-align: center;
+		}
+
+		& h2 {
+			@include adaptiveValue("margin-bottom", 24, 16, 0, 991, 375);
+		}
+
+		& div {
+			display: flex;
+			gap: toRem(11);
+
+			@media (max-width: $tablet) {
+				justify-content: center;
+			}
+		}
+
+		& span {
+			@include adaptiveValue("font-size", 20, 18, 0, 991, 375);
+			line-height: 160%; /* 32/20 */
+		}
+
+		& a {
+			color: $primary-sky-blue;
+			text-decoration: underline;
+
+			@include adaptiveValue("font-size", 24, 18, 0, 991, 375);
+			font-weight: 700;
+			line-height: 133.333333%; /* 32/24 */
+
+			transition: all 0.3s ease 0s;
+
+			@media (any-hover: hover) {
+				&:hover {
+					color: #545971;
+				}
+			}
+
+			@media (max-width: $tablet) {
+				font-weight: 600;
+			}
+		}
+	}
+
+	// .faq__spollers
+	&__spollers {
+	}
+}
+
+.spollers-faq {
+	max-width: toRem(833);
+
+	// .spollers-faq__item
+	&__item {
+		padding: toRem(24) toRem(32);
+		&:not(:last-child) {
+			margin-bottom: toRem(12);
+		}
+
+		border-radius: 12px;
+
+		transition: all 0.1s ease-in 0s;
+
+		&[open] {
+			background-color: $neutral-light-grey;
+		}
+	}
+
+	// .spollers-faq__title
+	&__title {
+		position: relative;
+
+		padding-right: toRem(45);
+		margin-bottom: toRem(16);
+
+		color: $neutral-grey-1;
+		list-style: none;
+		cursor: pointer;
+
+		@include adaptiveValue("font-size", 24, 18, 0, 991, 375);
+		font-weight: 700;
+		line-height: 133.333333%; /* 32/24 */
+
+		@media (max-width: $tablet) {
+			font-weight: 600;
+		}
+
+		&::after {
+			position: absolute;
+			content: "";
+			width: toRem(32);
+			height: toRem(32);
+			right: 0;
+			top: 0;
+
+			background-image: url("@img/down-arrow.svg");
+			background-position: center center; /* x y */
+			background-size: contain;
+			background-repeat: no-repeat;
+
+			transition: all 0.3s ease 0s;
+		}
+
+		&._spoller-active::after {
+			transform: rotate(-180deg);
+		}
+	}
+
+	// .spollers-faq__body
+	&__body {
+		max-width: toRem(730);
+		padding-right: toRem(25);
+
+		color: #737373;
+
+		font-size: toRem(16);
+		line-height: 150%; /* 24/16 */
+
+		@media (max-width: $tablet) {
+			font-size: toRem(18);
+		}
+	}
+}
+
+//===================================== >>> BLOG - SECTION >>> =====
+
 .footer {
 	height: 500px;
 	background-color: green;

@@ -1344,6 +1344,135 @@
 
 //===================================== >>> BLOG - SECTION >>> =====
 
+//===== >>> BANNER - SECTION >>> ===================================
+
+.banner {
+	background-image: image-set(url("@img/banner/Banner-PC@2x.jpeg") 2x, url("@img/banner/Banner-PC@1x.jpeg") 1x);
+	background-position: center bottom; /* x y */
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	@media (max-width: em(549)) {
+		height: toRem(628);
+
+		background-color: $primary-dark-blue-1;
+		background-image: image-set(url("@img/banner/banner-MOB@2x.jpeg") 2x, url("@img/banner/banner-MOB@1x.jpeg") 1x);
+		background-size: contain;
+	}
+
+	// .banner__container
+	&__container {
+		position: relative;
+
+		&::before {
+			content: "";
+			position: absolute;
+
+			width: toRem(581);
+			height: toRem(45);
+			top: toRem(-12);
+			left: toRem(-20);
+
+			background-image: url("@img/banner/decor-tape.svg");
+			background-position: center center; /* x y */
+			background-repeat: no-repeat;
+
+			@media (max-width: $tablet) {
+				left: 50%;
+				transform: translate(-50%, 0);
+			}
+
+			@media (max-width: 549px) {
+				width: toRem(299);
+				height: toRem(45);
+				top: toRem(-23);
+
+				background-image: url("@img/banner/decor-type-MOB.svg");
+			}
+		}
+	}
+
+	// .banner__content
+	&__content {
+		display: flex;
+		flex-direction: column;
+		gap: toRem(24);
+
+		padding: toRem(165) toRem(0) toRem(106);
+
+		@media (min-width: em(550)) {
+			width: 50%;
+		}
+
+		@media (max-width: em(549)) {
+			align-items: center;
+			text-align: center;
+
+			padding: toRem(60) toRem(0) toRem(37);
+		}
+	}
+
+	// .banner__title
+	&__title {
+		color: $neutral-white;
+
+		@include adaptiveValue("font-size", 64, 24, 0, 1920, 375);
+		font-weight: 800;
+		line-height: 118.75%; /* 76/64 */
+
+		@media (max-width: $tablet) {
+			font-weight: 700;
+		}
+
+		@media (max-width: em(549)) {
+			max-width: toRem(275);
+		}
+	}
+
+	// .banner__short-advant-list
+	&__short-advant-list {
+		display: flex;
+		@include adaptiveValue("column-gap", 45, 27, 0, 991, 375);
+		row-gap: toRem(12);
+		flex-wrap: wrap;
+
+		color: $primary-sky-blue;
+
+		@include adaptiveValue("font-size", 20, 14, 0, 991, 375);
+		line-height: math.div(32, 20);
+
+		@media (min-width: em(550)) {
+			margin-bottom: toRem(12);
+		}
+
+		& li {
+			display: flex;
+			align-items: center;
+			@include adaptiveValue("gap", 10, 7, 0, 991, 375);
+
+			&::before {
+				content: "";
+				@include adaptiveValue("height", 24, 18, 0, 991, 375);
+				@include adaptiveValue("width", 24, 18, 0, 991, 375);
+				background-image: url("@img/check-thin.svg");
+				background-position: center center; /* x y */
+				background-size: cover;
+				background-repeat: no-repeat;
+			}
+		}
+	}
+
+	// .banner__btn
+	&__btn {
+	}
+
+	// .banner__decor
+	&__decor {
+	}
+}
+
+//=================================== >>> BANNER - SECTION >>> =====
+
 .footer {
 	height: 500px;
 	background-color: green;

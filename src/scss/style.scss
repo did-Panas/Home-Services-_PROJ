@@ -198,6 +198,9 @@ body {
 	// .page__faq
 	&__faq {
 		@include adaptiveValue("padding-top", 190, 32, 0, 991, 375);
-		@include adaptiveValue("padding-bottom", 190, 32, 0, 991, 375);
+		@include adaptiveValue("padding-bottom", 230, 32, 0, 991, 375);
+	}
+	// .page__banner
+	&__banner {
 	}
 }

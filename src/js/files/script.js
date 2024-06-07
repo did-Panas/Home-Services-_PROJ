@@ -108,3 +108,26 @@ function documentActions(e) {
 
 	}
 }
+
+// ======================= >>>>> Прив'язка блоку BLOG до бази даних (файл JSON) =====
+// ==================================================================================
+
+// ===== BLOCKING SUBMIT-BTN with empty input (before validating) ===================
+
+const inputSubscript = document.querySelector('.subscribe-form__input');
+const btnSubmit = document.querySelector('.subscribe-form__btn');
+
+if (inputSubscript) {
+	inputSubscript.addEventListener("blur", function (e) {
+
+		if (inputSubscript.value.length > 0) {
+			btnSubmit.disabled = false;
+		} else {
+			btnSubmit.disabled = true;
+		}
+
+	});
+}
+
+// ============== >>>>>BLOCKING SUBMIT-BTN with empty input (before validating) =====
+// ==================================================================================

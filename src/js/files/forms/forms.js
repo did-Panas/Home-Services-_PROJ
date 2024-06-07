@@ -87,13 +87,23 @@ export let formValidate = {
 		let error = 0;
 		if (formRequiredItem.dataset.required === "email") {
 			formRequiredItem.value = formRequiredItem.value.replace(" ", "");
-			if (this.emailTest(formRequiredItem)) {
+			if ((this.emailTest(formRequiredItem)) && (formRequiredItem.value !== "")) {
 				this.addError(formRequiredItem);
 				error++;
 			} else {
 				this.removeError(formRequiredItem);
 			}
-		} else if (formRequiredItem.type === "checkbox" && !formRequiredItem.checked) {
+		}
+		else if (formRequiredItem.dataset.required === "uaphone") {
+			formRequiredItem.value = formRequiredItem.value.replace(" ", "");
+			if ((this.phoneTest(formRequiredItem)) && (formRequiredItem.value !== "")) {
+				this.addError(formRequiredItem);
+				error++;
+			} else {
+				this.removeError(formRequiredItem);
+			}
+		}
+		else if (formRequiredItem.type === "checkbox" && !formRequiredItem.checked) {
 			this.addError(formRequiredItem);
 			error++;
 		} else {
@@ -151,7 +161,14 @@ export let formValidate = {
 		}, 0);
 	},
 	emailTest(formRequiredItem) {
+
 		return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(formRequiredItem.value);
+
+	},
+	phoneTest(formRequiredItem) {
+
+		return !/^[\+]?3?[\s]?8?[\s]?\(?0\d{2}?\)?[\s]?\d{3}[\s|-]?\d{2}[\s|-]?\d{2}$/.test(formRequiredItem.value);
+
 	}
 }
 /* Відправлення форм */

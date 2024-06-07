@@ -1,14 +1,14 @@
 <footer class="footer">
 	<div class="footer__container">
 
-		<form action="files/sendmail/sendmail.php" method="POST" class="footer__form subscribe-form">
+		<form data-dev data-popup-message="#popup" action="#" class="footer__form subscribe-form">
 			<div class="subscribe-form__txt">
 				<p>Stay Connected with Our Newsletter</p>
 				<span>Subscribe to our newsletter to get more news, promo, or news services</span>
 			</div>
 			<div class="subscribe-form__body">
-				<input type="text" name="form[email]" data-error="Error" placeholder="Enter email address" class="subscribe-form__input input">
-				<button type="submit" class="subscribe-form__btn button">Subscribe</button>
+				<input type="text" name="form[email]" data-required="email" data-validate data-error="incorrect email" placeholder="Enter email address" class="subscribe-form__input input">
+				<button disabled type="submit" class="subscribe-form__btn button">Subscribe</button>
 			</div>
 		</form>
 

@@ -3,6 +3,8 @@
 
 .button {
 	display: inline-flex;
+	justify-content: center;
+
 	padding: toRem(14) toRem(36);
 
 	background-color: $primary-sky-blue;

@@ -1749,10 +1749,10 @@ body::after {
 }
 
 .no-webp .banner{
-  background-image: -webkit-image-set(url("../img/banner-bl/Banner-PC@2x.jpeg") 2x, url("../img/banner-bl/Banner-PC@1x.jpeg") 1x); }
+  background-image: -webkit-image-set(url("../img/banner-bl/image-pc@2x.jpeg") 2x, url("../img/banner-bl/image-pc@1x.jpeg") 1x); }
 
 .no-webp .banner{
-  background-image: image-set(url("../img/banner-bl/Banner-PC@2x.jpeg") 2x, url("../img/banner-bl/Banner-PC@1x.jpeg") 1x); }
+  background-image: image-set(url("../img/banner-bl/image-pc@2x.jpeg") 2x, url("../img/banner-bl/image-pc@1x.jpeg") 1x); }
 
 .banner {
   background-position: center bottom;
@@ -2338,7 +2338,7 @@ body::after {
     width: 18.6875rem;
     height: 2.8125rem;
     top: -1.4375rem;
-    background-image: url("../img/banner-bl/decor-type-MOB.svg");
+    background-image: url("../img/banner-bl/decor-tape-mob.svg");
   }
 }
 
@@ -2840,9 +2840,9 @@ body::after {
 
 @media (max-width: 34.3125em) {
   .no-webp .banner{
-    background-image: -webkit-image-set(url("../img/banner-bl/banner-MOB@2x.jpeg") 2x, url("../img/banner-bl/banner-MOB@1x.jpeg") 1x); }
+    background-image: -webkit-image-set(url("../img/banner-bl/image-mob@2x.jpeg") 2x, url("../img/banner-bl/image-mob@1x.jpeg") 1x); }
   .no-webp .banner{
-    background-image: image-set(url("../img/banner-bl/banner-MOB@2x.jpeg") 2x, url("../img/banner-bl/banner-MOB@1x.jpeg") 1x); }
+    background-image: image-set(url("../img/banner-bl/image-mob@2x.jpeg") 2x, url("../img/banner-bl/image-mob@1x.jpeg") 1x); }
   .banner {
     height: 39.25rem;
     background-color: #142257;
@@ -4032,16 +4032,16 @@ body::after {
   }
 }
 
-.webp .banner{ background-image: -webkit-image-set(url(../img/banner-bl/Banner-PC@2x.webp) 2x, url(../img/banner-bl/Banner-PC@1x.webp) 1x); }
+.webp .banner{ background-image: -webkit-image-set(url(../img/banner-bl/image-pc@2x.webp) 2x, url(../img/banner-bl/image-pc@1x.webp) 1x); }
 
-.webp .banner{ background-image: image-set(url(../img/banner-bl/Banner-PC@2x.webp) 2x, url(../img/banner-bl/Banner-PC@1x.webp) 1x); }
+.webp .banner{ background-image: image-set(url(../img/banner-bl/image-pc@2x.webp) 2x, url(../img/banner-bl/image-pc@1x.webp) 1x); }
 
 @media (max-width: 34.3125em){
 
-  .webp .banner{ background-image: -webkit-image-set(url(../img/banner-bl/banner-MOB@2x.webp) 2x, url(../img/banner-bl/banner-MOB@1x.webp) 1x); }
+  .webp .banner{ background-image: -webkit-image-set(url(../img/banner-bl/image-mob@2x.webp) 2x, url(../img/banner-bl/image-mob@1x.webp) 1x); }
 }
 
 @media (max-width: 34.3125em){
 
-  .webp .banner{ background-image: image-set(url(../img/banner-bl/banner-MOB@2x.webp) 2x, url(../img/banner-bl/banner-MOB@1x.webp) 1x); }
+  .webp .banner{ background-image: image-set(url(../img/banner-bl/image-mob@2x.webp) 2x, url(../img/banner-bl/image-mob@1x.webp) 1x); }
 }

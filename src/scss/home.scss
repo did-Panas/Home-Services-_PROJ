@@ -1347,7 +1347,7 @@
 //===== >>> BANNER - SECTION >>> ===================================
 
 .banner {
-	background-image: image-set(url("@img/banner/Banner-PC@2x.jpeg") 2x, url("@img/banner/Banner-PC@1x.jpeg") 1x);
+	background-image: image-set(url("@img/banner-bl/Banner-PC@2x.jpeg") 2x, url("@img/banner-bl/Banner-PC@1x.jpeg") 1x);
 	background-position: center bottom; /* x y */
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -1356,7 +1356,10 @@
 		height: toRem(628);
 
 		background-color: $primary-dark-blue-1;
-		background-image: image-set(url("@img/banner/banner-MOB@2x.jpeg") 2x, url("@img/banner/banner-MOB@1x.jpeg") 1x);
+		background-image: image-set(
+			url("@img/banner-bl/banner-MOB@2x.jpeg") 2x,
+			url("@img/banner-bl/banner-MOB@1x.jpeg") 1x
+		);
 		background-size: contain;
 	}
 
@@ -1373,7 +1376,7 @@
 			top: toRem(-12);
 			left: toRem(-20);
 
-			background-image: url("@img/banner/decor-tape.svg");
+			background-image: url("@img/banner-bl/decor-tape.svg");
 			background-position: center center; /* x y */
 			background-repeat: no-repeat;
 
@@ -1387,7 +1390,7 @@
 				height: toRem(45);
 				top: toRem(-23);
 
-				background-image: url("@img/banner/decor-type-MOB.svg");
+				background-image: url("@img/banner-bl/decor-type-MOB.svg");
 			}
 		}
 	}
